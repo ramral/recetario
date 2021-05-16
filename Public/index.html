@@ -1,0 +1,336 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+    .carousel-item {
+  height: 90vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.lnr {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.05em;
+  stroke-width: 1;
+}
+
+.services-icon {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+bgc2, .vLine, .hLine {
+    background-color: #0F52BA;
+}
+
+.quote-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.services-icon {
+    font-size: 60px;
+    margin-left: 2rem;
+}
+.context-dark,
+  .bg-gray-dark,
+  .bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .brand-logo-light{
+    margin-top: 3ex;
+    margin-bottom: 3ex;
+  }
+
+  .footer-classic a,
+  .footer-classic a:focus,
+  .footer-classic a:active {
+    color: #ffffff;
+  }
+
+  .oculto{
+    display: none;
+  }
+  .dropdown.dropdown-lg .dropdown-menu {
+    
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+  
+    display: flex !important;
+}
+.btn-group .btn {
+    
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+  
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.midrop{
+  height: calc(2.25rem + 2px) !important; 
+} 
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+
+</style>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Recetario DASW</title>
+  </head>
+  <body>
+    <h1>Recetario DASW</h1>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Recetario DASW</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="input-group mb-0">
+          <div class="input-group-prepend">
+            <div class="input-group" id="adv-search">
+              <input type="text" class="form-control" placeholder="Search for snippets" />
+              <div class="input-group-btn">
+                  <div class="btn-group" role="group">
+                      <div class="dropdown dropdown-lg">
+                          <button type="button" class="btn btn-default dropdown-toggle midrop"  data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                          <div class="dropdown-menu dropdown-menu-right" role="menu">
+                              <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                  <label for="filter">Ingredientes</label>
+                                  <select class="form-control" id='select-ingredientes'>
+                                    <option value="" selected>Sin filtro</option>
+                                  </select>
+                                </div>
+                          
+                                <div class="form-group">
+                                  <label for="filter">Categorias</label>
+                                  <select class="form-control" id='select-categorias'>
+                                      <option value="0" selected>sin filtro</option>
+                                      <option value="1">Mexicana</option>
+                                      <option value="2">Italiana</option>
+                                      <option value="3">Francesa</option>
+                                      <option value="4">China</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label for="filter">Utensilios</label>
+                                  <select class="form-control" id='select-utensilio'>
+                                    <option value="" selected>Sin filtro</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label for="filter">Etiqueta</label>
+                                  <select class="form-control" id = 'select-etiqueta'>
+                                      <option value="0" selected>Sin filtro</option>
+                                      <option value="1">Favoritos</option>
+                                      <option value="2">Rapidas</option>
+                                      <option value="3">Botaniux</option>
+                                      <option value="3">niños</option>
+                                  </select>
+                                </div>
+                                
+
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>buscar</button>
+                              </form>
+                          </div>
+                      </div>
+                      <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" id="buscar" aria-hidden="true">buscar</span></button>
+                  </div>
+              </div>
+          </div>
+        </div>
+            
+        </div>
+      </div>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="dropdown" style="margin-top: 7px;">
+          <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="Userprofile.html"></a></li>
+            <li><a href="Etiquetas.html">Etiquetas</a></li>
+            <li><a href="Categorias.html">Categorias</a></li>
+            <li><a href="Utencilios.html">Utensilios</a></li>
+            <li><a href="Recetas.html">Recetas</a></li>
+            <li><a href="Ingredientes.html">Ingredientes</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" id="Linkreg">
+          <a class="nav-link"  href="Registro.html">Registro</a>
+        </li>
+        <li  class="nav-item">
+          <a id = "login" class="nav-link" href="Login.html">Login</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+  
+</nav> 
+
+
+
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image: url('https://previews.123rf.com/images/weyo/weyo1411/weyo141100025/37064540-ingredientes-de-la-comida-italiana-y-mediterr%C3%A1nea-en-madera-aceitunas-background-spaghetti-albahaca-pa.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Ingredientes</h2>
+          <p class="lead">consiguelos</p>
+        </div>
+      </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://wallpaperaccess.com/full/767033.jpg')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Platillos</h2>
+          <p class="lead">Cocinalos</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://media.istockphoto.com/photos/culinary-background-with-spices-and-recipe-book-picture-id607299402')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">recetas</h2>
+          <p class="lead">Guardalas.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
+</header>
+
+<!-- Page Content -->
+
+
+    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQY_rBl8o-PMAJZqa03cWj4SWrXIGd9W3V2A&usqp=CAU" alt="" width="140" height="37"
+                    srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                <p>Nuestro recetario esta hecho especialmente para tu, se parte de nuestra gran famila</p>
+                <!-- Rights-->
+                <p class="rights"><span>©  </span><span
+                    class="copyright-year">2018</span><span> </span><span>Waves</span><span>. </span><span>All Rights
+                    Reserved.</span></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>Contactanos</h5>
+              <dl class="contact-list">
+                <dt>Claudia Santana:</dt>
+                <dd><a href="mailto:#">ClaudiaSantana@hotmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>Luis Ramos:</dt>
+                <dd><a href="mailto:#">LuisRamos@hotmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>Arturo Corona:</dt>
+                <dd><a href="mailto:#">ArturoCorona@hotmail.com</a></dd>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">filtros</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Page Content -->
+
+<!-- /.container -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+      <script src="index.js"></script>
+
+
+  </body>
+</html>

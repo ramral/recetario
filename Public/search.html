@@ -1,0 +1,231 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+  .carousel-item {
+    height: 70vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .lnr {
+    display: inline-block;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.05em;
+    stroke-width: 1;
+  }
+
+  .services-icon {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  bgc2,
+  .vLine,
+  .hLine {
+    background-color: #0f52ba;
+  }
+
+  .quote-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .services-icon {
+    font-size: 60px;
+    margin-left: 2rem;
+  }
+  .context-dark,
+  .bg-gray-dark,
+  .bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .brand-logo-light {
+    margin-top: 3ex;
+    margin-bottom: 3ex;
+  }
+
+  .footer-classic a,
+  .footer-classic a:focus,
+  .footer-classic a:active {
+    color: #ffffff;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Recetario DASW</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Registro</a>
+            </li>
+            <li id="login" class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li id="logout" class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            buscar por 
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Recetas</a>
+            <a class="dropdown-item" href="#">Ingredientes</a>
+            <a class="dropdown-item" href="#">Etiquetas</a>
+            <a class="dropdown-item" href="#">Utencilios</a>
+          </div>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Text input with dropdown button"
+        />
+      </div>
+    </div>
+
+    <section class="py-5 text-center" style="height:80%"> 
+    </section>
+
+    <footer
+      class="section footer-classic context-dark bg-image"
+      style="background: #2d3246"
+    >
+      <div class="container">
+        <div class="row row-30">
+          <div class="col-md-4 col-xl-5">
+            <div class="pr-xl-4">
+              <a class="brand" href="index.html"
+                ><img
+                  class="brand-logo-light"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQY_rBl8o-PMAJZqa03cWj4SWrXIGd9W3V2A&usqp=CAU"
+                  alt=""
+                  width="140"
+                  height="37"
+                  srcset="images/agency/logo-retina-inverse-280x74.png 2x"
+              /></a>
+              <p>
+                Nuestro recetario esta hecho especialmente para tu, se parte de
+                nuestra gran famila
+              </p>
+              <!-- Rights-->
+              <p class="rights">
+                <span>© </span><span class="copyright-year">2018</span
+                ><span> </span><span>Waves</span><span>. </span
+                ><span>All Rights Reserved.</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5>Contactanos</h5>
+            <dl class="contact-list">
+              <dt>Claudia Santana:</dt>
+              <dd><a href="mailto:#">ClaudiaSantana@hotmail.com</a></dd>
+            </dl>
+            <dl class="contact-list">
+              <dt>Luis Ramos:</dt>
+              <dd><a href="mailto:#">LuisRamos@hotmail.com</a></dd>
+            </dl>
+            <dl class="contact-list">
+              <dt>Arturo Corona:</dt>
+              <dd><a href="mailto:#">ArturoCorona@hotmail.com</a></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Page Content -->
+
+    <!-- /.container -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+  </body>
+</html>

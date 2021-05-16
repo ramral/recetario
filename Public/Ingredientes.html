@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Ingredientes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .carousel-item {
+            height: 90vh;
+            min-height: 350px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .oculto{
+    display: none;
+  }
+
+        section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .lnr {
+            display: inline-block;
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.05em;
+            stroke-width: 1;
+        }
+
+        .services-icon {
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        bgc2,
+        .vLine,
+        .hLine {
+            background-color: #0F52BA;
+        }
+
+        .quote-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .services-icon {
+            font-size: 60px;
+            margin-left: 2rem;
+        }
+
+        .context-dark,
+        .bg-gray-dark,
+        .bg-primary {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .brand-logo-light {
+            margin-top: 3ex;
+            margin-bottom: 3ex;
+        }
+
+        .footer-classic a,
+        .footer-classic a:focus,
+        .footer-classic a:active {
+            color: #ffffff;
+        }
+
+        .oculto {
+            display: none;
+        }
+
+        .dropdown.dropdown-lg .dropdown-menu {
+
+            margin-top: -1px;
+            padding: 6px 20px;
+        }
+
+        .input-group-btn .btn-group {
+
+            display: flex !important;
+        }
+
+        .btn-group .btn {
+
+            border-radius: 0;
+            margin-left: -1px;
+        }
+
+        .btn-group .btn:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .btn-group .form-horizontal .btn[type="submit"] {
+
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .form-horizontal .form-group {
+
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .form-group .form-control:last-child {
+
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .midrop {
+            height: calc(2.25rem + 2px) !important;
+        }
+
+        @media screen and (min-width: 768px) {
+            #adv-search {
+                width: 500px;
+                margin: 0 auto;
+            }
+
+            .dropdown.dropdown-lg {
+                position: static !important;
+            }
+
+            .dropdown.dropdown-lg .dropdown-menu {
+                min-width: 500px;
+            }
+        }
+
+        #ingredientes {
+            width: 300px;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ingredienterio DASW</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ingredienterio DASW</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="input-group mb-0">
+                <div class="input-group-prepend">
+                    <div class="input-group" id="adv-search">
+                        <input type="text" class="form-control" id="nombrebuscar" placeholder="Buscar ingrediente" />
+                        <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"
+                                        id="buscar" aria-hidden="true">buscar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="dropdown" style="margin-top: 7px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="Userprofile.html">Usuario</a></li>
+                        <li><a href="Etiquetas.html">Etiquetas</a></li>
+                        <li><a href="Categorias.html">Categorias</a></li>
+                        <li><a href="Utencilios.html">Utensilios</a></li>
+                        <li><a href="Ingredientes.html">Ingredientes</a></li>
+                        <li><a href="Ingredientes.html">Ingredientes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" id="Linkreg">
+                    <a class="nav-link" href="Registro.html">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a id="login" class="nav-link" href="Login.html">Login</a>
+                </li>
+
+            </ul>
+
+        </div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <h1>Ingredientes</h1>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Medida</th>
+                            <th id="crear" class="">
+                                <a class="btn btn-success" data-dismiss="modal" href="" data-toggle="modal"
+                                    data-target="#detalle"><i class="far fa-fw fa-edit"></i> Crear Ingrediente</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaingredientes">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- MOdal de formulario para creacion o edicion de etiquetas -->
+
+
+    <div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Nombrever"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="col-10 center-block" id="ingredientever">
+                        <div class="form-row">
+                            <div class="col-12">
+                                <h6 id="vernom"></h6>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <h6 id="vermed"></h6>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade"  id="detalleEditar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Ingredientes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="col-10 center-block" id="Editt">
+                        <div class="form-row">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group  justify-content-center was-validated">
+                                        <label for="editnombre">Nombre del ingrediente</label>
+                                        <input type="text" class="form-control" id="editnombre" value="" required
+                                            pattern="[a-zA-Z\s]+" autofocus>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group  justify-content-center was-validated">
+                                        <label for="editmedida">Unidad de medida del ingrediente</label>
+                                        <input type="text" class="form-control" id="editmedida" value="" required
+                                            pattern="[a-zA-Z\s]+" autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="Actualizar" data-dismiss="modal">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detalle" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Ingredientes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" >
+                <form class="col-10 center-block " id="detalle2">
+                    <div class="form-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group  justify-content-center was-validated" >
+                                    <label for="Nuevonombre" >Nombre del ingrediente</label>
+                                    <input type="text" class="form-control" id="Nuevonombre"   required
+                                    pattern="[a-zA-Z\s]+" >
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group  justify-content-center was-validated" >
+                                    <label for="Nuevomedida" >Unidad de medida del ingrediente</label>
+                                    <input type="text" class="form-control" id="Nuevomedida"   required
+                                    pattern="[a-zA-Z\s]+" >
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary " id="guardcrear" data-dismiss="modal" disabled= "true">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="borrarmodal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar ingrediente</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="columns6" id="eliminaring"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="botonacepeliminar"class="btn btn-primary" data-dismiss="modal">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page" style="margin-left:1cm; margin-top: 0.5cm;">
+        <ul class="pagination">
+            
+        </ul>
+    </nav>
+
+    <!-- / Desde aqui es del pie de pagina / -->
+    <footer class="section footer-classic context-dark bg-image mb-0" style="background: #2d3246;">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-md-4 col-xl-5">
+                    <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQY_rBl8o-PMAJZqa03cWj4SWrXIGd9W3V2A&usqp=CAU"
+                                alt="" width="140" height="37"
+                                srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                        <p>Nuestro ingredienterio esta hecho especialmente para ti, se parte de nuestra gran famila</p>
+                        <!-- Rights-->
+                        <p class="rights"><span>©  </span><span
+                                class="copyright-year">2018</span><span> </span><span>Waves</span><span>. </span><span>All
+                                Rights
+                                Reserved.</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contactanos</h5>
+                    <dl class="contact-list">
+                        <dt>Claudia Santana:</dt>
+                        <dd><a href="mailto:#">ClaudiaSantana@hotmail.com</a></dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>Luis Ramos:</dt>
+                        <dd><a href="mailto:#">LuisRamos@hotmail.com</a></dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>Arturo Corona:</dt>
+                        <dd><a href="mailto:#">ArturoCorona@hotmail.com</a></dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <script src="Ingredientes.js"></script>
+
+</html>

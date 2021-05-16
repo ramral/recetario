@@ -1,0 +1,161 @@
+ <!doctype html>
+  <html lang="en">
+
+  <head>
+    <title>Login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+    body,
+    html {
+      background: url(https://i1.wp.com/www.novelame.com/wp-content/uploads/2016/01/LibroRecetasFamiliar.jpg?fit=800%2C450) no-repeat center;
+      background-size: cover;
+      height: 94%;
+    }
+
+    /* body,html {
+    background-image: url('https://i1.wp.com/www.novelame.com/wp-content/uploads/2016/01/LibroRecetasFamiliar.jpg?fit=800%2C450');
+    height: 94%;
+} */
+
+    #profile-img {
+      height: 180px;
+    }
+
+    .h-80 {
+      height: 80% !important;
+    }
+
+    .context-dark,
+    .bg-gray-dark,
+    .bg-primary {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .brand-logo-light {
+      margin-top: 3ex;
+      margin-bottom: 3ex;
+    }
+
+    .footer-classic a,
+    .footer-classic a:focus,
+    .footer-classic a:active {
+      color: #ffffff;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Recetario DASW</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="input-group mb-0">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              buscar por
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Recetas</a>
+              <a class="dropdown-item" href="#">Ingredientes</a>
+              <a class="dropdown-item" href="#">Etiquetas</a>
+              <a class="dropdown-item" href="#">Utencilios</a>
+            </div>
+          </div>
+          <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Registro.html">Registro</a>
+          </li>
+          <li id="login" class="nav-item">
+            <a class="nav-link" href="Login.html">Login</a>
+          </li>
+
+        </ul>
+
+      </div>
+      </div>
+
+    </nav>
+    <div class="container h-80" id="datoslogin">
+      <div class="row align-items-center h-100">
+        <div class="col-3 mx-auto">
+          <div class="text-center">
+            <img id="profile-img" class="rounded-circle profile-img-card"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTARCOU7CZ5QxleSxNq092RbyEpIOdaSnCe5f1iseQtJITO5nzg4aGV8bcPxTuviuYFuZw&usqp=CAU" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+              <input type="email" name="password" id="eemail" class="form-control form-group" placeholder="Correo"
+                required autofocus>
+              <input type="password" name="password" id="inputPassword" class="form-control form-group"
+                placeholder="Password" required autofocus>
+              <a class="btn btn-lg btn-secondary btn-block btn-signin" type="button" href="" id="Entrar">Entrar</a>
+            </form><!-- /form -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="Login.js"></script>
+  </body>
+  <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+    <div class="container">
+      <div class="row row-30">
+        <div class="col-md-4 col-xl-5">
+          <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQY_rBl8o-PMAJZqa03cWj4SWrXIGd9W3V2A&usqp=CAU"
+                alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+            <p>Nuestro recetario esta hecho especialmente para tu, se parte de nuestra gran famila</p>
+            <!-- Rights-->
+            <p class="rights"><span>©  </span><span
+                class="copyright-year">2018</span><span> </span><span>Waves</span><span>. </span><span>All Rights
+                Reserved.</span></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>Contactanos</h5>
+          <dl class="contact-list">
+            <dt>Claudia Santana:</dt>
+            <dd><a href="mailto:#">ClaudiaSantana@hotmail.com</a></dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>Luis Ramos:</dt>
+            <dd><a href="mailto:#">LuisRamos@hotmail.com</a></dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>Arturo Corona:</dt>
+            <dd><a href="mailto:#">ArturoCorona@hotmail.com</a></dd>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </footer>
