@@ -4,16 +4,16 @@ let categorias=[];
 let np;
 //numero de pagina actual
 let numeropag;
-//categoria ocn la que se esta trabajando
-let categoriaactual;
+//Categoria ocn la que se esta trabajando
+let Categoriaactual;
 //model de ver
-let verr=document.querySelector('#categoriaver');
+let verr=document.querySelector('#Categoriaver');
 //model de editar
 let edi=document.querySelector('#Editt');
 //boton actualizar
 let actualizar=document.querySelector('#Actualizar');
-//boton crear nueva categoria
-let guardarcategoria=document.querySelector('#guardcrear');
+//boton crear nueva Categoria
+let guardarCategoria=document.querySelector('#guardcrear');
 //saber si existe un filtro para el paginado
 let filtro;
 //hacer el paginado , los botones no funcionan y poner la variable filtro en la funcion buscar y en la funcion de load
@@ -21,7 +21,7 @@ let eliminar=document.querySelector('#botonacepeliminar');
 
 let det=document.querySelector('#detalle2');
 
-async function buscar(e) {
+  async function buscar(e) {
     e.preventDefault();
     
     let string = "&";
@@ -53,7 +53,6 @@ document.getElementById("login").addEventListener("click", function () {
     sessionStorage.token = null;
     sessionStorage.us=null;
     sessionStorage.email=null;
-    //window.location.href="Login.html";
   });
 
 async function load(){
@@ -69,7 +68,7 @@ async function load(){
     }
     // log(`busqueda despues ${string}`);
     //pedir los datos con fetch
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria?sk=${sk}${filtro}`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token
@@ -89,16 +88,17 @@ async function load(){
     }
 }
 
-function categoriaToHtml(categoria){
+function CategoriaToHtml(Categoria){
     return`
     <tr>
-    <td>${categoria.nombre}</td>
+    <td>${Categoria.nombre}</td>
+    <td>${Categoria.medida}</td>
 
     <td width="50px">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a onclick="verdetalle('${categoria._id}')" class="btn-sm  btn-success text-center" href="" data-toggle="modal" data-dismiss="modal" data-target="#ver" ><i class="far fa-eye"></i> ver</a>
-            <a onclick="editarcate('${categoria._id}')" class="btn-sm btn-primary text-center ${editarbotton(categoria.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
-            <a onclick="confirmacionborrar('${categoria._id}')" class="confirmation btn-sm btn-danger text-center ${borrabotton(categoria)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#borrarmodal"  ><i class="far fa-fw fa-trash-alt"></i> Eliminar</a>
+            <a onclick="verdetalle('${Categoria._id}')" class="btn-sm  btn-success text-center" href="" data-toggle="modal" data-dismiss="modal" data-target="#ver" ><i class="far fa-eye"></i> ver</a>
+            <a onclick="editarcate('${Categoria._id}')" class="btn-sm btn-primary text-center ${editarbotton(Categoria.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
+            <a onclick="confirmacionborrar('${Categoria._id}')" class="confirmation btn-sm btn-danger text-center ${borrabotton(Categoria)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#borrarmodal"  ><i class="far fa-fw fa-trash-alt"></i> Eliminar</a>
         </div>
     </td>
     </tr>
@@ -130,9 +130,9 @@ function categoriasListToHTML(categoriasl){
     //limpipa la pantalla
     listacategorias.innerText="";
     //pone los nuevos datos en pantalla
-    //document.querySelector('#listacategorias').insertAdjacentHTML('beforeend',categoriaToHtml(categoriasl[0]));
+    //document.querySelector('#listacategorias').insertAdjacentHTML('beforeend',CategoriaToHtml(categoriasl[0]));
     for(let i=0;i<categoriasl.length;i++){
-        document.querySelector('#listacategorias').insertAdjacentHTML('beforeend',categoriaToHtml(categoriasl[i]));
+        document.querySelector('#listacategorias').insertAdjacentHTML('beforeend',CategoriaToHtml(categoriasl[i]));
     }
 }
 
@@ -146,7 +146,7 @@ async function actual(id){
     if(resp.status==200){
         //log('cargo datos')
         let s= await resp.json();
-        categoriaactual=s[1];
+        Categoriaactual=s[1];
     }else{
         alert('Ha ocurrido un error');
     }
@@ -154,25 +154,27 @@ async function actual(id){
 
 async function verdetalle(id){
     await actual(id);
-    console.log(categoriaactual[0].nombre);
-    document.querySelector('#Nombrever').innerText=categoriaactual[0].nombre;
-    document.querySelector('#vernom').innerText=categoriaactual[0].nombre;
+    console.log(Categoriaactual[0].nombre);
+    document.querySelector('#Nombrever').innerText=Categoriaactual[0].nombre;
+    document.querySelector('#vernom').innerText=Categoriaactual[0].nombre;
+    document.querySelector('#vermed').innerText=Categoriaactual[0].medida;
   
 }
 
 async function editarcate(id){
     await actual(id);
-    edi.querySelector('#editnombre').value=categoriaactual[0].nombre;
+    edi.querySelector('#editnombre').value=Categoriaactual[0].nombre;
+    edi.querySelector('#editmedida').value=Categoriaactual[0].medida;
 }
 
 async function confirmacionborrar(id){
     await actual(id);
-    document.querySelector('#eliminaring').innerText=`Eliminar: ${categoriaactual[0].nombre}`
+    document.querySelector('#eliminaring').innerText=`Eliminar: ${Categoriaactual[0].nombre}`
 }
 
 eliminar.addEventListener("click", async function(e){
     e.preventDefault();
-    id=categoriaactual[0]._id
+    id=Categoriaactual[0]._id
     let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria/${id}`,{
         method: 'DELETE',
         headers:{
@@ -191,10 +193,11 @@ actualizar.addEventListener("click", async function(e){
     e.preventDefault();
     let f={
         "nombre": edi.querySelector('#editnombre').value,
+        "medida": edi.querySelector('#editmedida').value,
     }
     let imp=JSON.stringify(f);
     //console.log(imp);
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria/${categoriaactual[0]._id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria/${Categoriaactual[0]._id}`,{
         method: 'PUT',
         headers:{
             'x-auth': sessionStorage.token,
@@ -204,7 +207,7 @@ actualizar.addEventListener("click", async function(e){
     //console.log(resp.status);
     if(resp.status==200){
         paginado(0);
-        alert('La categoria se ha actualizado')
+        alert('El Categoria se ha Actualizado')
         log('Actualizado');
     }else{
         alert('Ha ocurrido un error');
@@ -216,18 +219,19 @@ det.addEventListener("change", function (e) {
     log("cambio")
     if (det.querySelectorAll('* :invalid').length==0){
         log('son validos')
-        guardarcategoria.removeAttribute('disabled');
+        guardarCategoria.removeAttribute('disabled');
     }else{
-        if(!guardarcategoria.hasAttribute('disabled')){
-            guardarcategoria.setAttribute('disabled','true');
+        if(!guardarCategoria.hasAttribute('disabled')){
+            guardarCategoria.setAttribute('disabled','true');
         }
     }
 })
 
-guardarcategoria.addEventListener("click", async function(e){
+guardarCategoria.addEventListener("click", async function(e){
     e.preventDefault();
     let f={
         "nombre": document.querySelector('#Nuevonombre').value,
+        "medida":document.querySelector('#Nuevomedida').value,
     }
     let imp=JSON.stringify(f);
     console.log(imp);
@@ -240,11 +244,11 @@ guardarcategoria.addEventListener("click", async function(e){
     });
     console.log(resp.status);
     if(resp.status==201){
-        alert('Se ha creado nueva categoria')
+        alert('Se ha creado nueva Categoria')
         log('Categoria');
         paginado(numeropag);
         det.reset();
-        guardarcategoria.setAttribute('disabled','true');
+        guardarCategoria.setAttribute('disabled','true');
     }else{
         alert('Ha ocurrido un error');
     }

@@ -17,8 +17,6 @@ let guardaringrediente=document.querySelector('#guardcrear');
 //saber si existe un filtro para el paginado
 let filtro;
 //hacer el paginado , los botones no funcionan y poner la variable filtro en la funcion buscar y en la funcion de load
-let ingred;
-let utens;
 let eliminar=document.querySelector('#botonacepeliminar');
 
 let det=document.querySelector('#detalle2');
@@ -55,7 +53,6 @@ document.getElementById("login").addEventListener("click", function () {
     sessionStorage.token = null;
     sessionStorage.us=null;
     sessionStorage.email=null;
-    //window.location.href="Login.html";
   });
 
 async function load(){
