@@ -27,7 +27,7 @@ async function load(pg){
         sk=pg*6
     }
     //pedir los datos con fetch
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Tag`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Tag`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token

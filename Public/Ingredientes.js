@@ -71,7 +71,7 @@ async function load(){
     }
     // log(`busqueda despues ${string}`);
     //pedir los datos con fetch
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Ingrediente?sk=${sk}${filtro}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Ingrediente?sk=${sk}${filtro}`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token
@@ -140,7 +140,7 @@ function ingredientesListToHTML(ingredientesl){
 }
 
 async function actual(id){
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Ingrediente/${id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Ingrediente/${id}`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token
@@ -178,7 +178,7 @@ async function confirmacionborrar(id){
 eliminar.addEventListener("click", async function(e){
     e.preventDefault();
     id=ingredienteactual[0]._id
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Ingrediente/${id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Ingrediente/${id}`,{
         method: 'DELETE',
         headers:{
             'x-auth': sessionStorage.token}
@@ -200,7 +200,7 @@ actualizar.addEventListener("click", async function(e){
     }
     let imp=JSON.stringify(f);
     //console.log(imp);
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Ingrediente/${ingredienteactual[0]._id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Ingrediente/${ingredienteactual[0]._id}`,{
         method: 'PUT',
         headers:{
             'x-auth': sessionStorage.token,
@@ -238,7 +238,7 @@ guardaringrediente.addEventListener("click", async function(e){
     }
     let imp=JSON.stringify(f);
     console.log(imp);
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Ingrediente`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Ingrediente`,{
         method: 'POST',
         headers:{
             'x-auth': sessionStorage.token,

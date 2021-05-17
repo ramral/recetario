@@ -71,7 +71,7 @@ async function load(){
     }
     // log(`busqueda despues ${string}`);
     //pedir los datos con fetch
-    let resp= await fetch(`https://recetariodasw.herokuapp.com/api/Categoria`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token

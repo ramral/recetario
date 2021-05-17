@@ -15,7 +15,7 @@ entrar.addEventListener("click", async function(e){
     }
     let imp=JSON.stringify(f);
     console.log(imp);
-    let resp= await fetch("https://recetariodasw.herokuapp.com/api/User/Login",{
+    let resp= await fetch("https://ramral.herokuapp.com/api/User/Login",{
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
        // mode: 'no-cors',

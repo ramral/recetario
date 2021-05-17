@@ -79,7 +79,7 @@ function mostrarEditar(email) {
     },
   };
 
-  fetch(`https://recetariodasw.herokuapp.com/api/User/${email}`, requestOptions)
+  fetch(`https://ramral.herokuapp.com/api/User/${email}`, requestOptions)
     .then((response) => {
       if (response.status != 200) return "error";
       return response.json();
@@ -103,7 +103,7 @@ function mostrarEliminar(email) {
     },
   };
 
-  fetch(`https://recetariodasw.herokuapp.com/api/User/${email}`, requestOptions)
+  fetch(`https://ramral.herokuapp.com/api/User/${email}`, requestOptions)
     .then((response) => {
       if (response.status != 200) return "error";
       return response.json();
@@ -138,7 +138,7 @@ function editar() {
     body: raw,
   };
 
-  fetch(`https://recetariodasw.herokuapp.com/api/User/${emailEdit}`, requestOptions).then(
+  fetch(`https://ramral.herokuapp.com/api/User/${emailEdit}`, requestOptions).then(
     (response) => {
       window.location.reload();
     }
@@ -161,7 +161,7 @@ function cambiarPassword() {
     body: raw,
   };
 
-  fetch(`https://recetariodasw.herokuapp.com/api/User/${emailEdit}`, requestOptions).then(
+  fetch(`https://ramral.herokuapp.com/api/User/${emailEdit}`, requestOptions).then(
     (response) => {
       window.location.reload();
     }
@@ -177,7 +177,7 @@ function eliminar() {
     },
   };
 
-  fetch(`https://recetariodasw.herokuapp.com/api/User/${emailEdit}`, requestOptions).then(
+  fetch(`https://ramral.herokuapp.com/api/User/${emailEdit}`, requestOptions).then(
     (response) => {
       window.location.reload();
     }
@@ -197,7 +197,7 @@ function cargarUsuarios() {
     redirect: "follow",
   };
 
-  fetch(`https://recetariodasw.herokuapp.com/api/User/${email}`, requestOptions)
+  fetch(`https://ramral.herokuapp.com/api/User/${email}`, requestOptions)
     .then((response) => {
       if (response.status != 200) return err;
       return response.json();

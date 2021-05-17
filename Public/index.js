@@ -1,7 +1,7 @@
 "use strict";
 
 async function listing_ingredients() {
-  let ingred = await fetch(`https://recetariodasw.herokuapp.com/api/ingredientes`, {
+  let ingred = await fetch(`https://ramral.herokuapp.com/api/ingredientes`, {
     method: "GET",
     headers: {
       "x-auth": sessionStorage.token,
@@ -22,7 +22,7 @@ async function listing_ingredients() {
 }
 
 async function listing_utensilios() {
-  let utensilio = await fetch(`https://recetariodasw.herokuapp.com/api/Utensilio`, {
+  let utensilio = await fetch(`https://ramral.herokuapp.com/api/Utensilio`, {
     method: "GET",
     headers: {
       "x-auth": sessionStorage.token,
@@ -79,7 +79,7 @@ async function buscar(e) {
     method: "GET",
     headers: myHeaders,
   };
-  fetch(`https://recetariodasw.herokuapp.com/api/Recipe?${string}`, requestOptions)
+  fetch(`https://ramral.herokuapp.com/api/Recipe?${string}`, requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result));
 }

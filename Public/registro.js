@@ -25,7 +25,7 @@ function registro(e) {
     redirect: "follow",
   };
 
-  fetch("https://recetariodasw.herokuapp.com/api/User", requestOptions).then((response) => {
+  fetch("https://ramral.herokuapp.com/api/User", requestOptions).then((response) => {
       console.log(response);
       if ((response.status == 200))
         return (window.location.href = "/Public/index.html");
