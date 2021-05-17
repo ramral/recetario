@@ -96,7 +96,7 @@ function UtencilioToHtml(Utencilio){
     <td width="50px">
         <div class="btn-group" role="group" aria-label="Basic example">
             <a onclick="verdetalle('${Utencilio._id}')" class="btn-sm  btn-success text-center" href="" data-toggle="modal" data-dismiss="modal" data-target="#ver" ><i class="far fa-eye"></i> ver</a>
-            <a onclick="editarcate('${Utencilio._id}')" class="btn-sm btn-primary text-center ${editarbotton(Utencilio.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
+            <a onclick="editarute('${Utencilio._id}')" class="btn-sm btn-primary text-center ${editarbotton(Utencilio.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
             <a onclick="confirmacionborrar('${Utencilio._id}')" class="confirmation btn-sm btn-danger text-center ${borrabotton(Utencilio)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#borrarmodal"  ><i class="far fa-fw fa-trash-alt"></i> Eliminar</a>
         </div>
     </td>
@@ -159,7 +159,7 @@ async function verdetalle(id){
   
 }
 
-async function editarcate(id){
+async function editarute(id){
     await actual(id);
     edi.querySelector('#editnombre').value=Utencilioactual[0].nombre;
 }

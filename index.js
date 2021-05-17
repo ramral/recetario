@@ -26,10 +26,10 @@ app.use("/api/Utencilio", utencilios);
 app.use("/api/Tag", tags);
 
 
-app.get("/api/Tag" , async (req, res) => {
-  let lista= await Tag.getTag();
-  res.send(lista);
-});
+// app.get("/api/Tag" , async (req, res) => {
+//   let lista= await Tag.getTag();
+//   res.send(lista);
+// });
 
 
 
