@@ -92,7 +92,6 @@ function CategoriaToHtml(Categoria){
     return`
     <tr>
     <td>${Categoria.nombre}</td>
-    <td>${Categoria.medida}</td>
 
     <td width="50px">
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -157,14 +156,12 @@ async function verdetalle(id){
     console.log(Categoriaactual[0].nombre);
     document.querySelector('#Nombrever').innerText=Categoriaactual[0].nombre;
     document.querySelector('#vernom').innerText=Categoriaactual[0].nombre;
-    document.querySelector('#vermed').innerText=Categoriaactual[0].medida;
   
 }
 
 async function editarcate(id){
     await actual(id);
     edi.querySelector('#editnombre').value=Categoriaactual[0].nombre;
-    edi.querySelector('#editmedida').value=Categoriaactual[0].medida;
 }
 
 async function confirmacionborrar(id){
@@ -193,7 +190,6 @@ actualizar.addEventListener("click", async function(e){
     e.preventDefault();
     let f={
         "nombre": edi.querySelector('#editnombre').value,
-        "medida": edi.querySelector('#editmedida').value,
     }
     let imp=JSON.stringify(f);
     //console.log(imp);
@@ -231,7 +227,6 @@ guardarCategoria.addEventListener("click", async function(e){
     e.preventDefault();
     let f={
         "nombre": document.querySelector('#Nuevonombre').value,
-        "medida":document.querySelector('#Nuevomedida').value,
     }
     let imp=JSON.stringify(f);
     console.log(imp);
