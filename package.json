@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CluadiaSantana/Backend.git"
+    "url": "git+https://github.com/ramral/recetario.git"
   },
   "bugs": {
-    "url": "https://github.com/CluadiaSantana/Backend/issues"
+    "url": "https://github.com/ramral/recetario/issues"
   },
-  "homepage": "https://github.com/CluadiaSantana/Backend#readme"
+  "homepage": "https://github.com/ramral/recetario#readme"
 }
