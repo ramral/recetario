@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const fs = require('fs')
 const path = require('path')
-const Utencilio = require("./models/Utencilio");
+const Utencilio = require("./models/Utensilio");
 const jwt = require("jsonwebtoken");
 const { route } = require("./users");
 const { restart } = require("nodemon");
