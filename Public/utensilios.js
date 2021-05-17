@@ -1,19 +1,19 @@
 function log(val) { console.log("683153",val); }
-let utencilios=[];
+let utensilios=[];
 //numero de registros
 let np;
 //numero de pagina actual
 let numeropag;
-//Utencilio ocn la que se esta trabajando
-let Utencilioactual;
+//Utensilio ocn la que se esta trabajando
+let Utensilioactual;
 //model de ver
-let verr=document.querySelector('#Utenciliover');
+let verr=document.querySelector('#Utensiliover');
 //model de editar
 let edi=document.querySelector('#Editt');
 //boton actualizar
 let actualizar=document.querySelector('#Actualizar');
-//boton crear nueva Utencilio
-let guardarUtencilio=document.querySelector('#guardcrear');
+//boton crear nueva Utensilio
+let guardarUtensilio=document.querySelector('#guardcrear');
 //saber si existe un filtro para el paginado
 let filtro;
 //hacer el paginado , los botones no funcionan y poner la variable filtro en la funcion buscar y en la funcion de load
@@ -68,7 +68,7 @@ async function load(){
     }
     // log(`busqueda despues ${string}`);
     //pedir los datos con fetch
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Utencilio?sk=${sk}${filtro}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Utensilio?sk=${sk}${filtro}`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token
@@ -76,11 +76,11 @@ async function load(){
     });
     if(resp.status==200){
         //log('cargo datos')
-        utencilios= await resp.json();
+        utensilios= await resp.json();
         //una vez teniendo los datos pasarlos a userlist para ponerlos en pantalla
-        utenciliosListToHTML(utencilios[1]);
-        np=utencilios[0]
-        log(`numero de utencilios ${np}`);
+        utensiliosListToHTML(utensilios[1]);
+        np=utensilios[0]
+        log(`numero de utensilios ${np}`);
         agregarboton();
         //poner botones de busqueda necesarios
     }else{
@@ -88,16 +88,16 @@ async function load(){
     }
 }
 
-function UtencilioToHtml(Utencilio){
+function UtensilioToHtml(Utensilio){
     return`
     <tr>
-    <td>${Utencilio.nombre}</td>
+    <td>${Utensilio.nombre}</td>
 
     <td width="50px">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a onclick="verdetalle('${Utencilio._id}')" class="btn-sm  btn-success text-center" href="" data-toggle="modal" data-dismiss="modal" data-target="#ver" ><i class="far fa-eye"></i> ver</a>
-            <a onclick="editarute('${Utencilio._id}')" class="btn-sm btn-primary text-center ${editarbotton(Utencilio.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
-            <a onclick="confirmacionborrar('${Utencilio._id}')" class="confirmation btn-sm btn-danger text-center ${borrabotton(Utencilio)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#borrarmodal"  ><i class="far fa-fw fa-trash-alt"></i> Eliminar</a>
+            <a onclick="verdetalle('${Utensilio._id}')" class="btn-sm  btn-success text-center" href="" data-toggle="modal" data-dismiss="modal" data-target="#ver" ><i class="far fa-eye"></i> ver</a>
+            <a onclick="editarute('${Utensilio._id}')" class="btn-sm btn-primary text-center ${editarbotton(Utensilio.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
+            <a onclick="confirmacionborrar('${Utensilio._id}')" class="confirmation btn-sm btn-danger text-center ${borrabotton(Utensilio)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#borrarmodal"  ><i class="far fa-fw fa-trash-alt"></i> Eliminar</a>
         </div>
     </td>
     </tr>
@@ -125,18 +125,18 @@ function borrabotton(correo){
     }
 }
 
-function utenciliosListToHTML(utenciliosl){
+function utensiliosListToHTML(utensiliosl){
     //limpipa la pantalla
-    listautencilios.innerText="";
+    listautensilios.innerText="";
     //pone los nuevos datos en pantalla
-    //document.querySelector('#listautencilios').insertAdjacentHTML('beforeend',UtencilioToHtml(utenciliosl[0]));
-    for(let i=0;i<utenciliosl.length;i++){
-        document.querySelector('#listautencilios').insertAdjacentHTML('beforeend',UtencilioToHtml(utenciliosl[i]));
+    //document.querySelector('#listautensilios').insertAdjacentHTML('beforeend',UtensilioToHtml(utensiliosl[0]));
+    for(let i=0;i<utensiliosl.length;i++){
+        document.querySelector('#listautensilios').insertAdjacentHTML('beforeend',UtensilioToHtml(utensiliosl[i]));
     }
 }
 
 async function actual(id){
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Utencilio/${id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Utensilio/${id}`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token
@@ -145,7 +145,7 @@ async function actual(id){
     if(resp.status==200){
         //log('cargo datos')
         let s= await resp.json();
-        Utencilioactual=s[1];
+        Utensilioactual=s[1];
     }else{
         alert('Ha ocurrido un error');
     }
@@ -153,26 +153,26 @@ async function actual(id){
 
 async function verdetalle(id){
     await actual(id);
-    console.log(Utencilioactual[0].nombre);
-    document.querySelector('#Nombrever').innerText=Utencilioactual[0].nombre;
-    document.querySelector('#vernom').innerText=Utencilioactual[0].nombre;
+    console.log(Utensilioactual[0].nombre);
+    document.querySelector('#Nombrever').innerText=Utensilioactual[0].nombre;
+    document.querySelector('#vernom').innerText=Utensilioactual[0].nombre;
   
 }
 
 async function editarute(id){
     await actual(id);
-    edi.querySelector('#editnombre').value=Utencilioactual[0].nombre;
+    edi.querySelector('#editnombre').value=Utensilioactual[0].nombre;
 }
 
 async function confirmacionborrar(id){
     await actual(id);
-    document.querySelector('#eliminaring').innerText=`Eliminar: ${Utencilioactual[0].nombre}`
+    document.querySelector('#eliminaring').innerText=`Eliminar: ${Utensilioactual[0].nombre}`
 }
 
 eliminar.addEventListener("click", async function(e){
     e.preventDefault();
-    id=Utencilioactual[0]._id
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Utencilio/${id}`,{
+    id=Utensilioactual[0]._id
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Utensilio/${id}`,{
         method: 'DELETE',
         headers:{
             'x-auth': sessionStorage.token}
@@ -193,7 +193,7 @@ actualizar.addEventListener("click", async function(e){
     }
     let imp=JSON.stringify(f);
     //console.log(imp);
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Utencilio/${Utencilioactual[0]._id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Utensilio/${Utensilioactual[0]._id}`,{
         method: 'PUT',
         headers:{
             'x-auth': sessionStorage.token,
@@ -203,7 +203,7 @@ actualizar.addEventListener("click", async function(e){
     //console.log(resp.status);
     if(resp.status==200){
         paginado(0);
-        alert('El Utencilio se ha Actualizado')
+        alert('El Utensilio se ha Actualizado')
         log('Actualizado');
     }else{
         alert('Ha ocurrido un error');
@@ -215,22 +215,22 @@ det.addEventListener("change", function (e) {
     log("cambio")
     if (det.querySelectorAll('* :invalid').length==0){
         log('son validos')
-        guardarUtencilio.removeAttribute('disabled');
+        guardarUtensilio.removeAttribute('disabled');
     }else{
-        if(!guardarUtencilio.hasAttribute('disabled')){
-            guardarUtencilio.setAttribute('disabled','true');
+        if(!guardarUtensilio.hasAttribute('disabled')){
+            guardarUtensilio.setAttribute('disabled','true');
         }
     }
 })
 
-guardarUtencilio.addEventListener("click", async function(e){
+guardarUtensilio.addEventListener("click", async function(e){
     e.preventDefault();
     let f={
         "nombre": document.querySelector('#Nuevonombre').value,
     }
     let imp=JSON.stringify(f);
     console.log(imp);
-    let resp= await fetch(`https://ramral.herokuapp.com/api/Utencilio`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Utensilio`,{
         method: 'POST',
         headers:{
             'x-auth': sessionStorage.token,
@@ -239,11 +239,11 @@ guardarUtencilio.addEventListener("click", async function(e){
     });
     console.log(resp.status);
     if(resp.status==201){
-        alert('Se ha creado nueva Utencilio')
-        log('Utencilio');
+        alert('Se ha creado nueva Utensilio')
+        log('Utensilio');
         paginado(numeropag);
         det.reset();
-        guardarUtencilio.setAttribute('disabled','true');
+        guardarUtensilio.setAttribute('disabled','true');
     }else{
         alert('Ha ocurrido un error');
     }
