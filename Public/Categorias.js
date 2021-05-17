@@ -155,7 +155,7 @@ function categoriasListToHTML(categoriasl){
 }
 
 async function actual(id){
-    let resp= await fetch(`http://127.0.0.1:3000/api/Categoria/${id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria/${id}`,{
         method: 'GET',
         headers:{
             'x-auth': sessionStorage.token
@@ -191,7 +191,7 @@ async function confirmacionborrar(id){
 eliminar.addEventListener("click", async function(e){
     e.preventDefault();
     id=categoriaactual[0]._id
-    let resp= await fetch(`http://127.0.0.1:3000/api/Categoria/${id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria/${id}`,{
         method: 'DELETE',
         headers:{
             'x-auth': sessionStorage.token}
@@ -212,7 +212,7 @@ actualizar.addEventListener("click", async function(e){
     }
     let imp=JSON.stringify(f);
     //console.log(imp);
-    let resp= await fetch(`http://127.0.0.1:3000/api/Categoria/${categoriaactual[0]._id}`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria/${categoriaactual[0]._id}`,{
         method: 'PUT',
         headers:{
             'x-auth': sessionStorage.token,
@@ -249,7 +249,7 @@ guardarcategoria.addEventListener("click", async function(e){
     }
     let imp=JSON.stringify(f);
     console.log(imp);
-    let resp= await fetch(`http://127.0.0.1:3000/api/Categoria`,{
+    let resp= await fetch(`https://ramral.herokuapp.com/api/Categoria`,{
         method: 'POST',
         headers:{
             'x-auth': sessionStorage.token,
