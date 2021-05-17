@@ -17,8 +17,6 @@ let guardarcategoria=document.querySelector('#guardcrear');
 //saber si existe un filtro para el paginado
 let filtro;
 //hacer el paginado , los botones no funcionan y poner la variable filtro en la funcion buscar y en la funcion de load
-let ingred;
-let utens;
 let eliminar=document.querySelector('#botonacepeliminar');
 
 let det=document.querySelector('#detalle2');
@@ -99,7 +97,7 @@ function categoriaToHtml(categoria){
     <td width="50px">
         <div class="btn-group" role="group" aria-label="Basic example">
             <a onclick="verdetalle('${categoria._id}')" class="btn-sm  btn-success text-center" href="" data-toggle="modal" data-dismiss="modal" data-target="#ver" ><i class="far fa-eye"></i> ver</a>
-            <a onclick="editaringre('${categoria._id}')" class="btn-sm btn-primary text-center ${editarbotton(categoria.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
+            <a onclick="editarcate('${categoria._id}')" class="btn-sm btn-primary text-center ${editarbotton(categoria.correo)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#detalleEditar" ><i class="far fa-fw fa-edit"></i> Editar</a>
             <a onclick="confirmacionborrar('${categoria._id}')" class="confirmation btn-sm btn-danger text-center ${borrabotton(categoria)}" href="" data-toggle="modal" data-dismiss="modal" data-target="#borrarmodal"  ><i class="far fa-fw fa-trash-alt"></i> Eliminar</a>
         </div>
     </td>
@@ -127,22 +125,6 @@ function borrabotton(correo){
         return;
     }
 }
-
-// function listing(ingre){
-//     let r="";
-//     for(let i=0;i<ingre.length;i++){
-//         r+="<li>"+ingre[i].nombre+" "+ingre[i].cantidad+"</li>";
-//     }
-//     return(r);
-// }
-
-// function list(type){
-//     let r="";
-//     for(let i=0;i<type.length;i++){
-//         r+="<li>"+type[i]+"</li>";
-//     }
-//     return(r);
-// }
 
 function categoriasListToHTML(categoriasl){
     //limpipa la pantalla
@@ -178,7 +160,7 @@ async function verdetalle(id){
   
 }
 
-async function editaringre(id){
+async function editarcate(id){
     await actual(id);
     edi.querySelector('#editnombre').value=categoriaactual[0].nombre;
 }
@@ -222,7 +204,7 @@ actualizar.addEventListener("click", async function(e){
     //console.log(resp.status);
     if(resp.status==200){
         paginado(0);
-        alert('El categoria se ha Actualizado')
+        alert('La categoria se ha actualizado')
         log('Actualizado');
     }else{
         alert('Ha ocurrido un error');
